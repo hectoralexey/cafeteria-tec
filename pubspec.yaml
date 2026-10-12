@@ -38,10 +38,8 @@ dependencies:
 dev_dependencies:
   flutter:
     sdk: flutter
-  # Agregamos Firebase Core y los servicios que usaremos:
-  firebase_core: ^2.27.0
-  firebase_auth: ^4.17.8
-  cloud_firestore: ^4.15.8
+
+  supabase_flutter: ^2.5.0 # O la versión actual compatible
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
