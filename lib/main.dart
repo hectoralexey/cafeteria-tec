@@ -1,31 +1,38 @@
+
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'login_screen.dart'; // Importamos la nueva pantalla de login
+import 'login_screen.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
- await Supabase.initialize(
-    url: 'https://ctfzcjyfsrbimqwkggb.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN0ZnpjanlmenNyYmltcXdrZ2diIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4MzE5OTQsImV4cCI6MjEwNzQwNzk5NH0.0bm6AzttOccn6Hg0_zfmKFfeGJ6fU8l9-DXsqaa1Xh0',
+  await Supabase.initialize(
+    // Pega aquí la URL exacta que aparece en tu proyecto de Supabase.
+    url: 'https://ctfzcjyfzsrbimqwkggb.supabase.co',
+
+    // Clave pública de Supabase.
+    anonKey: 'sb_publishable_zByT5mxebwxyFk1AzErifg_hv2P513X',
   );
 
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Cafeteria Tec',
       debugShowCheckedModeBanner: false,
-      title: 'Cafetería Tec',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: const Color(0xFFF5F7FA),
+        primarySwatch: Colors.brown,
+        scaffoldBackgroundColor: const Color(0xFFFFF8F0),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF6D4C41),
+          foregroundColor: Colors.white,
+        ),
       ),
-      // La app inicia obligatoriamente en el Login
       home: const LoginScreen(),
     );
   }
